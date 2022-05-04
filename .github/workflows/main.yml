@@ -26,4 +26,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           results-file: 'result.json'
         env:
-          PROJECT_PATH:: ./w12-testing
+          PROJECT_PATH: ./w12-testing
