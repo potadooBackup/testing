@@ -14,7 +14,6 @@ jobs:
         with:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v2
-      - run: cd ./w12-testing
       - run: npm ci
       - run: npx nx test      
       - name: Process jest results with default
