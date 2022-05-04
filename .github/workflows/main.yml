@@ -5,7 +5,6 @@ on:
       - master
   pull_request:
 
-
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -16,10 +15,11 @@ jobs:
       - uses: nrwl/nx-set-shas@v2
       - working-directory: ./w12-testing
         run: npm ci
-             npx nx test
+      - working-directory: ./w12-testing
+        run: npx nx test
       - name: Process jest results with default
         if: always()
         uses: im-open/process-jest-test-results@v2.0.5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          results-file: '/w12-testing/result.json'
+          results-file: './w12-testing/result.json'
