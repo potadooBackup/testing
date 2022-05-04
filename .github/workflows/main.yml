@@ -14,10 +14,10 @@ jobs:
         with:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v2
-      - run: cd ./w12-testing
-      - run: ls
-      - run: npm ci
-      - run: npx nx test      
+      - working-directory: ./w12-testing
+        run: npm ci
+      - working-directory: ./w12-testing
+        run: npx nx test      
       - name: Process jest results with default
         if: always()
         uses: im-open/process-jest-test-results@v2.0.5
