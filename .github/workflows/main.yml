@@ -16,7 +16,8 @@ jobs:
       - uses: nrwl/nx-set-shas@v2
       - working-directory: ./w12-testing/apps/bowling
         run: npm ci
-             npx nx test      
+             npx nx test
+             ls
       - name: Process jest results with default
         if: always()
         uses: im-open/process-jest-test-results@v2.0.5
